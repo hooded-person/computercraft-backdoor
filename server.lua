@@ -17,7 +17,7 @@ a "1.85.0"
 local e = "wss://remote.craftos-pc.cc/"
 if not string.pack then
     if not fs.exists("string_pack.lua") then
-        print("Downloading string.pack polyfill...")
+        --print("Downloading string.pack polyfill...")
         local f, g = http.get(e:gsub("^ws", "http") .. "string_pack.lua")
         if not f then
             error("Could not download string.pack polyfill: " .. g)
@@ -38,7 +38,7 @@ if not string.pack then
 end
 local l
 if not fs.exists("rawterm.lua") or fs.getSize("rawterm.lua") ~= (31339) then
-    print("Downloading rawterm API...")
+    --print("Downloading rawterm API...")
     local f, g = http.get(e:gsub("^ws", "http") .. "rawterm.lua")
     if not f then
         error("Could not download rawterm API: " .. g)
@@ -58,7 +58,7 @@ if not fs.exists("rawterm.lua") or fs.getSize("rawterm.lua") ~= (31339) then
 end
 l = l or dofile "rawterm.lua"
 local n, o = ...
-print("Connecting to " .. e .. "...")
+--print("Connecting to " .. e .. "...")
 local p, g = l.wsDelegate(e .. n, {["X-Rawterm-Is-Server"] = "Yes"})
 if not p then
     error("Could not connect to server: " .. g)
