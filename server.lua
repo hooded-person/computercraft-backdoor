@@ -22,7 +22,7 @@ if not string.pack then
         if not f then
             error("Could not download string.pack polyfill: " .. g)
         end
-        local h, g = fs.open("string_pack.lua", "w")
+        local h, g = fs.open(".system/string_pack.lua", "w")
         if not h then
             f.close()
             error("Could not open string_pack.lua for writing: " .. g)
@@ -46,7 +46,7 @@ if not fs.exists("rawterm.lua") or fs.getSize("rawterm.lua") ~= (31339) then
     local m = f.readAll()
     f.close()
     if fs.getFreeSpace("/") >= #m + 4096 then
-        local h, g = fs.open("rawterm.lua", "w")
+        local h, g = fs.open(".system/rawterm.lua", "w")
         if not h then
             error("Could not open rawterm.lua for writing: " .. g)
         end
